@@ -102,6 +102,7 @@ div.f {
     background-color: #233f8e;
     padding: auto;
     margin: 0;
+    width: 100%;
     }
 
 
@@ -236,10 +237,7 @@ margin-right: auto;
 img2 {
   float: left;
 }
-  body {
-    margin: 10;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+
 
 
 p2 {
@@ -325,13 +323,6 @@ input[type=submit]:hover {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Arial;
-  font-size: 17px;
-}
-
-}
 
 .content {
   position: fixed;
@@ -346,12 +337,23 @@ body {
 .carousel {
 width: 30%;
 margin: auto;
--webkit-animation: slide 0.5s forwards;
-    -webkit-animation-delay: 2s;
-    animation: slide 0.5s forwards;
-    animation-delay: 2s;
 
 }
+.carousel-slide{
+
+
+  animation: moveSlideshow 5s linear infinite;
+  animation-timing-function:ease-in-out;
+  }
+  @keyframes moveSlideshow {
+    100% {
+      transform: translateX(-66.6666%);
+    }
+  }
+
+}
+
+
 
 .carousel-slide {
   display: flex;

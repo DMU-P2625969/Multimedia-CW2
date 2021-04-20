@@ -18,7 +18,7 @@
 
 <div style="background-image: url('https://github.com/DMU-P2625969/Multimedia-CW2/blob/main/images/background%20photo%20top%200,5.jpg?raw=true');
 background-size: cover;   background-repeat: no-repeat;
- height:350px; padding-top:80px;padding-bottom: 80px; position:top;">
+ height:350px; padding-top:80px;padding-bottom: 80px; position:top; width: 100%;">
 
  <!--Disneyland paris Logo -->
 
@@ -119,69 +119,176 @@ One such French company is Le Bras Frères, renowned for its incredible work on 
 <br>
 <br>
 
+<div class="container">
+  <div class="slides">
+    <div class="slide">
+      <img src="images\DSC029441.JPG" alt="" />
+      <div class="slide-content">
+      </div>
+    </div>
+    <div class="slide">
+      <img src="images\DSC029441.JPG" alt="" />
+    </div>
+    <div class="slide">
+      <img src="images\DSC023981.jpg" alt="" />
+    </div>
+    <div class="slide">
+      <img src="images\DSC028541.JPG" alt="" />
+    </div>
+  </div>
+  <div class="slide-controls">
+    <button id="prev-btn">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button id="next-btn">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</div>
 
 <!-- carousel gallery -->
-<div class="carousel">
-  <div class="carousel-slide">
-  <img class="mySlides" src="images\DSC029441.JPG" style="width:125%;  border-radius: 3%;">
-  <img class="mySlides2" src="images\DSC023981.jpg" style="width:125%;border-radius: 3%;">
-  <img class="mySlides" src="images\DSC028541.JPG" style="width:125%; border-radius: 3%;">
-</div>
-</div>
+
 
 <br>
-<br>
-<br>
-<br>
+
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  margin: 0 auto;
+  width: 50%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  float: none;
+}
+.slides {
+  display: flex;
+  height: 100%;
+}
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+}
+.slide-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#next-btn,
+#prev-btn {
+  cursor: pointer;
+  background: transparent;
+  font-size: 30px;
+  border: none;
+  padding: 10px;
+  color: white;
+}
+#next-btn:focus,
+#prev-btn:focus {
+  outline: none;
+}
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  font-size: 60px;
+  color: white;
+}
+
+</style>
 
 <!-- Javascript for carousel -->
 <script>
-var myIndex = 0;
-carousel();
+const slideContainer = document.querySelector('.container');
+const slide = document.querySelector('.slides');
+const nextBtn = document.getElementById('next-btn');
+const prevBtn = document.getElementById('prev-btn');
+const interval = 3000;
 
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
+let slides = document.querySelectorAll('.slide');
+let index = 1;
+let slideId;
+
+const firstClone = slides[0].cloneNode(true);
+const lastClone = slides[slides.length - 1].cloneNode(true);
+
+firstClone.id = 'first-clone';
+lastClone.id = 'last-clone';
+
+slide.append(firstClone);
+slide.prepend(lastClone);
+
+const slideWidth = slides[index].clientWidth;
+
+slide.style.transform = `translateX(${-slideWidth * index}px)`;
+
+console.log(slides);
+
+const startSlide = () => {
+  slideId = setInterval(() => {
+    moveToNextSlide();
+  }, interval);
+};
+
+const getSlides = () => document.querySelectorAll('.slide');
+
+slide.addEventListener('transitionend', () => {
+  slides = getSlides();
+  if (slides[index].id === firstClone.id) {
+    slide.style.transition = 'none';
+    index = 1;
+    slide.style.transform = `translateX(${-slideWidth * index}px)`;
   }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}
-  x[myIndex-1].style.display = "block";
-  setTimeout(carousel, 1500); // Change image every 1 second
-  carouselSlide.style.transiction = "transition 0.4s ease-in-out"
-}
+
+  if (slides[index].id === lastClone.id) {
+    slide.style.transition = 'none';
+    index = slides.length - 2;
+    slide.style.transform = `translateX(${-slideWidth * index}px)`;
+  }
+});
+
+const moveToNextSlide = () => {
+  slides = getSlides();
+  if (index >= slides.length - 1) return;
+  index++;
+  slide.style.transition = '.7s ease-out';
+  slide.style.transform = `translateX(${-slideWidth * index}px)`;
+};
+
+const moveToPreviousSlide = () => {
+  if (index <= 0) return;
+  index--;
+  slide.style.transition = '.7s ease-out';
+  slide.style.transform = `translateX(${-slideWidth * index}px)`;
+};
+
+slideContainer.addEventListener('mouseenter', () => {
+  clearInterval(slideId);
+});
+
+slideContainer.addEventListener('mouseleave', startSlide);
+nextBtn.addEventListener('click', moveToNextSlide);
+prevBtn.addEventListener('click', moveToPreviousSlide);
+
+startSlide();
+
 </script>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>
