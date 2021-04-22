@@ -4,34 +4,30 @@
 
 <style>
 
+body {
+margin: 0;
 
-div.footer {
-font-size: 20px;
-text-align: center;
-text-align: justify;
-text-align: bottom;
 }
+
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
 div.a {
   font-size: 20px;
   text-align: center;
 
     }
-div.b {
-    font-size: 15px;
-    text-align: center;
-    margin-bottom: 150px;
-  }
 
 
-div.b {
-  font-size: large;
-}
-
-div.c {
-  font-size: 150%;
-
-}
 
 div.d {
 font-size: 15px;
@@ -89,14 +85,7 @@ div.f {
     height: 30%;
     width: 30%;
 
-  }
-
-  body {
-  margin: 0;
-
 }
-
-
 
   .navbar {
     background-color: #233f8e;
@@ -180,29 +169,6 @@ a.Blue:visited {color:#233f8e;font-size: 250%;}
 a.Blue:hover {color:#162B52;font-size: 250%;}
 
 
-h1 {
-  font-size: 500%;
-  font-family: serif;
-}
-
-  h2 {
-    font-size: 30px;
-  }
-
-  h3  {
-    font-size: 30px;
-    text-align: center;
-  }
-
-.p { font-family: "Times New Roman", Times, serif;
-}
-
-.p2 {
-
-}
-
-
-
 p {
 font-size: 20px;
 font-family: 'Poppins', sans-serif;
@@ -214,9 +180,6 @@ text-align: justify;
 text-justify: inter-word;
 }
 
-p2 {
-font-size: 15px;
-}
 
 p3 {
 font-size: 10px;
@@ -239,12 +202,9 @@ img2 {
 }
 
 
-
-p2 {
-border: 3px white solid;
-padding: 1%;
-margin: 10px;
-margin: 10px 10px 10px 10px;
+.responsive {
+  width: 20%;
+  height: auto;
 }
 
 hr{ width:100%; height:2px; background-color:#233f8e ; border:none;}
@@ -261,8 +221,6 @@ hr{ width:100%; height:2px; background-color:#233f8e ; border:none;}
 }
 
 
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
 
 
 input[type=text], select, textarea {
@@ -315,13 +273,11 @@ input[type=submit]:hover {
   position: fixed;
   right: 0;
   bottom: 0;
+  margin: 0;
   min-width: 100%;
   min-height: 100%;
 }
 
-* {
-  box-sizing: border-box;
-}
 
 
 .content {
@@ -350,9 +306,6 @@ margin: auto;
       transform: translateX(-66.6666%);
     }
   }
-
-}
-
 
 
 .carousel-slide {
