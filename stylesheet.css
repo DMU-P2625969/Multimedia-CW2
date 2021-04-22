@@ -28,6 +28,10 @@ div.a {
 
     }
 
+.responsive {
+  max-width: 30%;
+
+}
 
 
 div.d {
@@ -91,7 +95,7 @@ div.f {
   .navbar {
     background-color: #233f8e;
     padding: auto;
-    margin: 0;
+    margin-top: 20px;
     width: 100%;
     }
 
