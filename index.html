@@ -37,24 +37,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
-header
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 40px 100px;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-header .logo
-{
-  color: #fff;
-  text-transform: uppercase;
-  cursor: pointer;
-}
 
 .showcase
 {
@@ -70,30 +52,18 @@ header .logo
   transition: 0.5s;
   z-index: 2;
 }
-.showcase.active
-{
-  right: 300px;
-}
 
 .showcase video
 {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom:0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0.8;
-}
-.overlay
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #03a9f4;
-  mix-blend-mode: overlay;
 }
 .text
 {
@@ -116,7 +86,7 @@ header .logo
   color: #fff;
   margin: 20px 0;
   font-weight: 400;
-  max-width: 800px;
+  max-width: 50%;
 }
 .text a
 {
