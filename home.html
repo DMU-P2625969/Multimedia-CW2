@@ -171,7 +171,7 @@ One such French company is Le Bras Frères, renowned for its incredible work on 
   height: 100%;
 }
 .slide {
-  min-width: 100%;
+  min-width: 50%;
   position: relative;
 }
 .slide img {
@@ -218,7 +218,7 @@ const slideContainer = document.querySelector('.container');
 const slide = document.querySelector('.slides');
 const nextBtn = document.getElementById('next-btn');
 const prevBtn = document.getElementById('prev-btn');
-const interval = 3000;
+const interval = 2000;
 
 let slides = document.querySelectorAll('.slide');
 let index = 1;
@@ -266,14 +266,14 @@ const moveToNextSlide = () => {
   slides = getSlides();
   if (index >= slides.length - 1) return;
   index++;
-  slide.style.transition = '.7s ease-out';
+  slide.style.transition = '.5s ease-out';
   slide.style.transform = `translateX(${-slideWidth * index}px)`;
 };
 
 const moveToPreviousSlide = () => {
   if (index <= 0) return;
   index--;
-  slide.style.transition = '.7s ease-out';
+  slide.style.transition = '.5s ease-out';
   slide.style.transform = `translateX(${-slideWidth * index}px)`;
 };
 
