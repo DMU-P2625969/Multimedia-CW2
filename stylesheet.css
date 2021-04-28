@@ -68,11 +68,10 @@ div.f {
       width: 450px;
       height: 300px;
       overflow: hidden;
-      margin-left: 25px;
+      padding-left: 25px;
       float:left;
-      margin-right: 25px;
-      margin-left: 50px;
-      margin-bottom: 20px;
+      padding-right: 25px;
+      padding-bottom: 20px;
   }
 
   .zoom img {
