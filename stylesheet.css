@@ -324,7 +324,6 @@ margin: auto;
   padding-left: 50px;
   display: flex;
   align-items: center;
-  background: #111;
   transition: 0.5s;
   z-index: 2;
 }
