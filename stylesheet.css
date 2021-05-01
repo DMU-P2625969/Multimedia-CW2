@@ -1,37 +1,38 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-
 <style>
 
 
-div.footer {
-font-size: 20px;
-text-align: center;
-text-align: justify;
-text-align: bottom;
+body {
+margin: 0;
+
 }
+
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
 div.a {
   font-size: 20px;
   text-align: center;
+  font color: #eee;
 
     }
-div.b {
-    font-size: 15px;
-    text-align: center;
-    margin-bottom: 150px;
-  }
 
-
-div.b {
-  font-size: large;
-}
-
-div.c {
-  font-size: 150%;
+.responsive {
+  max-width: 30%;
 
 }
+
 
 div.d {
 font-size: 15px;
@@ -39,6 +40,7 @@ text-align: left;
 border: 3px #233f8e solid;
 padding: 29px 10px;
 margin: 10px 70% 20px 20px;
+word-break: break-all;
 }
 
 div.e {
@@ -64,14 +66,13 @@ div.f {
 }
 
 .zoom {
-      width: 300px;
-      height: 300px;
-      overflow: visible;
-      margin-left: 25px;
+      width: 40%;
+      height: 40%;
+      overflow: hidden;
+      padding-left: 25px;
       float:left;
-      margin-right: 150px;
-      margin-left: 50px;
-      margin-bottom: 20px;
+      padding-right: 25px;
+      padding-bottom: 20px;
   }
 
   .zoom img {
@@ -85,24 +86,18 @@ div.f {
 
   .video {
     float: right;
-    margin-right: 50px;
-    height: 30%;
-    width: 30%;
-
-  }
-
-  body {
-  margin: 0;
+    height: 50%;
+    width: 50%;
+    padding-right: 50px;
+    padding-bottom: 20px;
 
 }
-
-
 
   .navbar {
     background-color: #233f8e;
     padding: auto;
-    border: 2px white solid;
-    margin: 0;
+    margin-top: 0px;
+    min-width: 100%;
     }
 
 
@@ -180,31 +175,8 @@ a.Blue:visited {color:#233f8e;font-size: 250%;}
 a.Blue:hover {color:#162B52;font-size: 250%;}
 
 
-h1 {
-  font-size: 500%;
-  font-family: serif;
-}
-
-  h2 {
-    font-size: 30px;
-  }
-
-  h3  {
-    font-size: 30px;
-    text-align: center;
-  }
-
-.p { font-family: "Times New Roman", Times, serif;
-}
-
-.p2 {
-
-}
-
-
-
 p {
-font-size: 20px;
+font-size: 15px;
 font-family: 'Poppins', sans-serif;
 border: 3px;
 padding: 5px 5px;
@@ -214,9 +186,6 @@ text-align: justify;
 text-justify: inter-word;
 }
 
-p2 {
-font-size: 15px;
-}
 
 p3 {
 font-size: 10px;
@@ -237,18 +206,7 @@ margin-right: auto;
 img2 {
   float: left;
 }
-  body {
-    margin: 10;
-    font-family: Arial, Helvetica, sans-serif;
-  }
 
-
-p2 {
-border: 3px white solid;
-padding: 1%;
-margin: 10px;
-margin: 10px 10px 10px 10px;
-}
 
 hr{ width:100%; height:2px; background-color:#233f8e ; border:none;}
 
@@ -256,16 +214,14 @@ hr{ width:100%; height:2px; background-color:#233f8e ; border:none;}
    position: bottom;
    left: 0;
    bottom: 0;
-   width: 100%;
+   right: 0;
+   min-width: 100%;
    text-align: center;
    border-top: 20px solid #eee;
-
    background: #eee ;
 }
 
 
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
 
 
 input[type=text], select, textarea {
@@ -313,26 +269,16 @@ input[type=submit]:hover {
 
 }
 
-
 .background {
   position: fixed;
   right: 0;
   bottom: 0;
+  margin: 0;
   min-width: 100%;
   min-height: 100%;
 }
 
-* {
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-  font-family: Arial;
-  font-size: 17px;
-}
-
-}
 
 .content {
   position: fixed;
@@ -341,16 +287,129 @@ body {
   color: #f1f1f1;
   width: 100%;
   padding: 20px;
+
 }
 
 .carousel {
-display: block;
-margin-left: 50px;
-margin-right: auto;
 width: 30%;
-margin-top: auto;
-float:left;
+margin: auto;
+
 }
+.carousel-slide{
+
+
+  animation: moveSlideshow 5s linear infinite;
+  animation-timing-function:ease-in-out;
+  }
+  @keyframes moveSlideshow {
+    100% {
+      transform: translateX(-66.6666%);
+    }
+  }
+
+
+.carousel-slide {
+  display: flex;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+
+.showcase
+{
+  object-fit: cover;
+  width: 100%;
+  min-height: 100vh;
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.showcase video
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  background: #111;
+}
+.text
+{
+  position: relative;
+  z-index: 10;
+}
+
+.text h2
+{
+  font-size: 4em;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1em;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.text p
+{
+  font-size: 0.9em;
+  color: #fff;
+  z-index: 10;
+  margin: 20px 0;
+  font-weight: 400;
+  max-width: 50%;
+}
+.text a
+{
+  display: inline-block;
+  font-size: 1em;
+  background: #fff;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+.text a:hover
+{
+  letter-spacing: 6px;
+}
+.social
+{
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social li
+{
+  list-style: none;
+}
+.social li a
+{
+  display: inline-block;
+  padding: 5px;
+  filter: invert(1);
+  transform: scale(0.5);
+  transition: 0.5s;
+}
+.social li a:hover
+{
+  transform: scale(0.5) translateY(-15px);
+}
+
 
 
 </style>
